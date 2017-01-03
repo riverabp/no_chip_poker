@@ -7,6 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 	    System.out.println("start.");
+        System.out.println();
 
         //create board
         //create players
@@ -15,5 +16,15 @@ public class Main {
             //deal cards
             //4 betting rounds
 
+        boolean activePlayers = true;
+        Player myPlayer = new Player();
+        myPlayer.print();
+
+        while(activePlayers){
+
+        }
+
+        System.out.println();
+        System.out.println("done.");
     }
 }
