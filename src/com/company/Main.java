@@ -6,7 +6,7 @@ public class Main {
     public static final double BIG_BLIND = 2.0;
 
     public static void main(String[] args) {
-	    System.out.println("start.");
+        System.out.println("start.");
         System.out.println();
 
         //create board
@@ -20,9 +20,9 @@ public class Main {
         Player myPlayer = new Player();
         myPlayer.print();
 
-        while(activePlayers){
+        //while(activePlayers){
 
-        }
+        //}
 
         System.out.println();
         System.out.println("done.");
