@@ -23,7 +23,7 @@ public class Player {
         myHand[1] = new Card();
     }
 
-    public void print(){
+    public void printSelf(){
         System.out.println("name: " + myName);
         System.out.println("stack: " + myStack);
         System.out.print("hand: ");

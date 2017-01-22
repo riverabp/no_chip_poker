@@ -16,9 +16,12 @@ public class Main {
             //deal cards
             //4 betting rounds
 
-        boolean activePlayers = true;
-        Player myPlayer = new Player();
-        myPlayer.print();
+//        boolean activePlayers = true;
+//        Player myPlayer = new Player();
+//        myPlayer.print();
+
+        Table myTable = new Table();
+        myTable.printSelf();
 
         //while(activePlayers){
 
