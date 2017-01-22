@@ -60,7 +60,6 @@ public class Card {
         } else {
             System.out.print(this.rank);
         }
-
         System.out.print(suit);
     }
 
