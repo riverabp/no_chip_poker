@@ -13,7 +13,7 @@ public class Player {
     private Card[] myHand;
     private String myName;
 
-    Player(){
+    public Player(){
         myStack = DEFAULT_STACK;
         Random random = new Random();
         myName = Integer.toString(random.nextInt(100000));

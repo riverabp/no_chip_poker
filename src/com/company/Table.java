@@ -8,35 +8,51 @@ import java.util.ListIterator;
  */
 public class Table {
 
-    public final static byte DEFAULT_PLAYER_COUNT = 6;
-    public final static byte MAXIMUM_PLAYER_COUNT = 9;
-    public final static byte DEFULT_BUTTON_POSITION = 1;
+    public final static int DEFAULT_PLAYER_COUNT = 6;
+    public final static int DEFAULT_BUTTON_POSITION = 1;
 
-    private byte buttonPosition;
-    private byte playerCount;
+    private int buttonPosition;
+    private int playerCount;
     private int orbits;
     private LinkedList<Player> players;
 
+    //defaut ctor
     public Table(){
-        playerCount = DEFAULT_PLAYER_COUNT;
-        buttonPosition = DEFULT_BUTTON_POSITION;
-        orbits = 0;
-        players = new LinkedList<Player>();
+        this(DEFAULT_PLAYER_COUNT);
+    }
 
-        for (int i = 0;i < DEFAULT_PLAYER_COUNT; i++){
+    //ctor with number of people
+    public Table(int playerCount){
+        this.playerCount = playerCount;
+        buttonPosition = DEFAULT_BUTTON_POSITION;
+        orbits = 0;
+        players = new LinkedList<>();
+
+        for (int i = 0;i < playerCount; i++){
             players.add(i,new Player());
         }
     }
 
-    public byte getButtonPosition(){return buttonPosition;}
+    //add player to table list
+    public void addPlayer(){
+        playerCount++;
+        players.add(new Player());
+    }
 
-    public void setButtonPosition(byte buttonPosition){
+    public void removePlayer(int index){
+        playerCount--;
+        players.remove(index);
+    }
+
+    public int getButtonPosition(){return buttonPosition;}
+
+    public void setButtonPosition(int buttonPosition){
         this.buttonPosition = buttonPosition;
     }
 
-    public byte getPlayerCount(){return playerCount;}
+    public int getPlayerCount(){return playerCount;}
 
-    public void setPlayerCount(byte playerCount) {
+    public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
     }
 
