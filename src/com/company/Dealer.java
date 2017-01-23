@@ -51,7 +51,7 @@ public class Dealer {
 
     public void printBoard(){
         System.out.print("Board Cards: ");
-        for(int i = 0; i <= boardSize; i++){
+        for(int i = 0; i < boardSize; i++){
             board[i].print();
             System.out.print(" ");
         }

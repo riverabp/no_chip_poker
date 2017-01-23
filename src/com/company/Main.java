@@ -10,12 +10,15 @@ public class Main {
         System.out.println();
 
         //create table of 6 players
-        Table table = new Table();
+        Table table = new Table(3);
         Dealer dealer = new Dealer();
         boolean donePlaying = false;
         //loop while playing
         while(!donePlaying){
             dealer.preFlop(table);
+            table.printSelf();
+            dealer.flop();
+            dealer.printBoard();
             donePlaying = true;
         }
             //move dealer
@@ -25,7 +28,7 @@ public class Main {
 //        Player myPlayer = new Player();
 //        myPlayer.print();
 
-        table.printSelf();
+
 
         //while(activePlayers){
 

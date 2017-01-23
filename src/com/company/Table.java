@@ -18,11 +18,17 @@ public class Table {
     private LinkedList<Player> players;
     private Dealer dealer;
 
-    //defaut ctor
+    /**
+     * Construct a table with a default number of players
+     */
     public Table(){
         this(DEFAULT_PLAYER_COUNT);
     }
 
+    /**
+     * Construct a table with a specific number of players
+     * @param playerCount
+     */
     //ctor with number of people
     public Table(int playerCount){
         this.playerCount = playerCount;
@@ -36,33 +42,60 @@ public class Table {
         dealer = new Dealer();
     }
 
-    //add player to table list
+    /**
+     * Add a player to the table
+     */
     public void addPlayer(){
         playerCount++;
         players.add(new Player());
     }
 
+    /**
+     * Add a player to a specific seat
+     * @param index
+     */
     public void removePlayer(int index){
         playerCount--;
         players.remove(index);
     }
 
+    /**
+     * Returns the seat of the current dealer
+     * @return int button seat
+     */
     public int getButtonPosition(){return buttonPosition;}
 
+    /**
+     * Change the seat of the dealer
+     * @param buttonPosition
+     */
     public void setButtonPosition(int buttonPosition){
         this.buttonPosition = buttonPosition;
     }
 
+    /**
+     * @return number of players
+     */
     public int getPlayerCount(){return playerCount;}
 
+    /**
+     * @param playerCount int number of players
+     */
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
     }
 
+    /**
+     * @param index seat of player
+     * @return player at index location
+     */
     public Player getPlayer(int index){
         return players.get(index);
     }
 
+    /**
+     * Print the info of every player at the table
+     */
     public void printSelf(){
         ListIterator<Player> itr = players.listIterator(0);
         System.out.println("Table:");
