@@ -7,7 +7,6 @@ import java.util.ListIterator;
  * Created by Ben on 1/3/17.
  */
 public class Table {
-
     public final static int DEFAULT_PLAYER_COUNT = 6;
     public final static int DEFAULT_BUTTON_POSITION = 1;
 
@@ -15,6 +14,7 @@ public class Table {
     private int playerCount;
     private int orbits;
     private LinkedList<Player> players;
+    private Dealer dealer;
 
     //defaut ctor
     public Table(){
@@ -31,6 +31,7 @@ public class Table {
         for (int i = 0;i < playerCount; i++){
             players.add(i,new Player());
         }
+        dealer = new Dealer();
     }
 
     //add player to table list

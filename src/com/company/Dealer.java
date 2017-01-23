@@ -10,11 +10,17 @@ public class Dealer {
 
     private Card[] board;
     private int boardSize;
+    private Deck deck;
 
     //create board and empty pot
     Dealer(){
         boardSize = 0;
         board = new Card[BOARD_SIZE];
+        deck = new Deck();
+    }
+
+    public Card DealCard(){
+        return deck.draw();
     }
 
     public void preFlop(){

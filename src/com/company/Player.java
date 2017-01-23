@@ -19,8 +19,8 @@ public class Player {
         myName = Integer.toString(random.nextInt(100000));
 
         myHand = new Card[2];
-        myHand[0] = new Card();
-        myHand[1] = new Card();
+        myHand[0] = new Deck().draw();
+        myHand[1] = new Deck().draw();
     }
 
     public void printSelf(){
