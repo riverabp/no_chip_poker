@@ -8,6 +8,8 @@ import java.util.Random;
 public class Player {
 
     public final double DEFAULT_STACK = 200;
+    public final int DEFAULT_HOLE_CARDS = 2;
+
 
     private double myStack;
     private Card[] myHand;
@@ -17,10 +19,12 @@ public class Player {
         myStack = DEFAULT_STACK;
         Random random = new Random();
         myName = Integer.toString(random.nextInt(100000));
+        myHand = new Card[DEFAULT_HOLE_CARDS];
+    }
 
-        myHand = new Card[2];
-        myHand[0] = new Card();
-        myHand[1] = new Card();
+    public void setHand(Card c1, Card c2){
+        myHand[0] = c1;
+        myHand[1] = c2;
     }
 
     public void printSelf(){

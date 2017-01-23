@@ -19,7 +19,7 @@ public class Dealer {
         deck = new Deck();
     }
 
-    public Card DealCard(){
+    public Card drawCard(){
         return deck.draw();
     }
 
