@@ -4,7 +4,9 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 /**
- * Created by Ben on 1/3/17.
+ * This class is a list of players sitting at the table. One player holds the dealer button and it passses
+ * around clockwise with every hand. A table also has a pot that players can bet into and then is awarded to
+ * the winner of the hand.
  */
 public class Table {
     public final static int DEFAULT_PLAYER_COUNT = 6;
@@ -55,6 +57,10 @@ public class Table {
 
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
+    }
+
+    public Player getPlayer(int index){
+        return players.get(index);
     }
 
     public void printSelf(){

@@ -9,19 +9,23 @@ public class Main {
         System.out.println("start.");
         System.out.println();
 
-        //create board
-        //create players
+        //create table of 6 players
+        Table table = new Table();
+        Dealer dealer = new Dealer();
+        boolean donePlaying = false;
         //loop while playing
+        while(!donePlaying){
+            dealer.preFlop(table);
+            donePlaying = true;
+        }
             //move dealer
             //deal cards
             //4 betting rounds
-
 //        boolean activePlayers = true;
 //        Player myPlayer = new Player();
 //        myPlayer.print();
 
-        Table myTable = new Table();
-        myTable.printSelf();
+        table.printSelf();
 
         //while(activePlayers){
 

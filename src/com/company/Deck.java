@@ -23,9 +23,12 @@ public class Deck {
 
         while(!validCard){
             numberOfDrawnCards++;
-            c = new Card();
             ListIterator<Card> itr = drawnCards.listIterator(0);
+            c = new Card();
 
+            if(!itr.hasNext()){
+                validCard = true;
+            }
             while (itr.hasNext()) {
                 if (itr.next().getSuit() != c.getSuit() &&
                         itr.next().getRank() != c.getRank() &&

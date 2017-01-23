@@ -19,12 +19,16 @@ public class Dealer {
         deck = new Deck();
     }
 
-    public Card drawCard(){
+    public Card dealCard(){
         return deck.draw();
     }
 
-    public void preFlop(){
-
+    public void preFlop(Table table){
+        for (int i = 0; i < table.getPlayerCount(); i++){
+            Card c1 = deck.draw();
+            Card c2 = deck.draw();
+            table.getPlayer(i).setHand(c1,c2);
+        }
     }
 
     //flop 3 cards
