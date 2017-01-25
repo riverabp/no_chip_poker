@@ -14,6 +14,7 @@ public class Player {
     private double myStack;
     private Card[] myHand;
     private String myName;
+    private Dealer.HankRank myHandRank;
 
     /**
      * default ctor

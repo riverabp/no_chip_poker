@@ -94,6 +94,13 @@ public class Table {
     }
 
     /**
+     * @return list of players
+     */
+    public LinkedList<Player> getPlayers(){
+        return players;
+    }
+
+    /**
      * Print the info of every player at the table
      */
     public void printSelf(){

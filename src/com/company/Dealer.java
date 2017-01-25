@@ -1,7 +1,8 @@
 package com.company;
 
 /**
- * A Dealer has a deck of cards and draws cards to place on the board.
+ * A Dealer has a deck of cards and draws cards to place on the board. A dealer is also responsible for
+ * determining the winner in a hand.
  */
 public class Dealer {
 
@@ -13,6 +14,16 @@ public class Dealer {
     private Card[] burnedCards;
     private int boardSize;
     private Deck deck;
+
+    public enum HankRank{
+        HIGH_CARD,
+        PAIR,
+        TWO_PAIR,
+        THREE_OF_A_KIND,
+        STRAIGHT,
+        FLUSH,
+        STRAIGHT_FLUSH
+    };
 
     /**
      * Default ctor.
@@ -71,6 +82,22 @@ public class Dealer {
         board[4] = deck.draw();
         boardSize = 5;
     }
+
+    /**
+     * Assigns a hand rank to every player
+     * @param table
+     * @return
+     */
+    public Player assignHandRanks(Table table){
+        Player p = new Player();
+
+        for (int i = 0; i < table.getPlayerCount(); i++){
+            p = table.getPlayer(i);
+
+        }
+        return p;
+    }
+
 
     /**
      * Print the board cards to the console
