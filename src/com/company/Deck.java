@@ -25,27 +25,35 @@ public class Deck {
      * @return Card c that is unique
      */
     public Card draw(){
-        boolean validCard = true;
+        boolean valid = false;
         Card c = new Card();
 
-        while(!validCard){
+        //while not valid, generate a new card
+        while(!valid){
             ListIterator<Card> itr = drawnCards.listIterator(0);
             c = new Card();
 
-            if(!itr.hasNext()){
-                validCard = true;
+            //if end of the list, the card is valid
+            if(numberOfDrawnCards == 0){
+                numberOfDrawnCards++;
+                drawnCards.add(c);
+                return c;
+            //check card against every drawn card
             } else {
-                while (itr.hasNext() && validCard) {
+                //while more cards in the list
+                while (itr.hasNext()) {
                     Card cur = itr.next();
                     if (cur.getSuit() == c.getSuit() &&
                             cur.getRank() == c.getRank()) {
-                        validCard = false;
+                            break;
+                    } else if (!itr.hasNext()){
+                        numberOfDrawnCards++;
+                        drawnCards.add(c);
+                        return c;
                     }
                 }
             }
         }
-        numberOfDrawnCards++;
-        drawnCards.add(c);
         return c;
     }
 }

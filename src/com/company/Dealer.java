@@ -47,10 +47,10 @@ public class Dealer {
      * Burn one card and place three on the board
      */
     public void flop(){
-        burnedCards[0] = new Card();
-        board[0] = new Card();
-        board[1] = new Card();
-        board[2] = new Card();
+        burnedCards[0] = deck.draw();
+        board[0] = deck.draw();
+        board[1] = deck.draw();
+        board[2] = deck.draw();
         boardSize = 3;
     }
 
@@ -58,8 +58,8 @@ public class Dealer {
      * Burn one card and place the turn on the board
      */
     public void turn(){
-        burnedCards[1] = new Card();
-        board[3] = new Card();
+        burnedCards[1] = deck.draw();
+        board[3] = deck.draw();
         boardSize = 4;
     }
 
@@ -67,8 +67,8 @@ public class Dealer {
      * Burn one card and place the river on the board
      */
     public void river(){
-        burnedCards[2] = new Card();
-        board[4] = new Card();
+        burnedCards[2] = deck.draw();
+        board[4] = deck.draw();
         boardSize = 5;
     }
 
