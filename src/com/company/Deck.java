@@ -4,19 +4,26 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 /**
- * Created by Ben on 1/22/17.
+ *A deck is really a linked list of discarded cards so duplicate cards are not returned. This gives the
+ * appearance that cards are being drawn from a single deck of 52.
  */
 public class Deck {
 
     private LinkedList<Card> drawnCards;
     private int numberOfDrawnCards;
 
+    /**
+     * Default ctor
+     */
     Deck(){
         drawnCards = new LinkedList<>();
         numberOfDrawnCards = 0;
     }
 
-    //Draw a card that has not been dealt
+    /**
+     * Creates a new card and tests if the card has already been drawn
+     * @return Card c that is unique
+     */
     public Card draw(){
         boolean validCard = true;
         Card c = new Card();
