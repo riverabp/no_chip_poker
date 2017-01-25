@@ -3,7 +3,7 @@ package com.company;
 import java.util.Random;
 
 /**
- * Created by Ben on 1/1/17.
+ *A player has a stack of chips, 2 hole cards, and a name. A player can make bets, check, fold, call, and raise.
  */
 public class Player {
 

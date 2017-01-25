@@ -11,6 +11,9 @@ public class Card {
     private int rank;
     Random random = new Random();
 
+    /**
+     * Creates a new card with a suite and rank
+     */
     Card(){
         rank = random.nextInt(13) + 2; //rank 2-14
 
@@ -27,24 +30,39 @@ public class Card {
         }
     }
 
+    /**
+     * @return suit
+     */
     public char getSuit() {
         return suit;
     }
 
+    /**
+     * change suit
+     * @param suit
+     */
     public void setSuit(char suit) {
         this.suit = suit;
     }
 
+    /**
+     * @return rank of card
+     */
     public int getRank() {
         return rank;
     }
 
+    /**
+     * @param new rank
+     */
     public void setRank(int rank) {
         this.rank = rank;
     }
 
+    /**
+     * Print card to the console e.g. "7c"
+     */
     public void print(){
-
         if(rank > 9){
             if(rank == 10){
                 System.out.print("T");
