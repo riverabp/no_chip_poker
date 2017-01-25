@@ -14,7 +14,6 @@ public class Main {
 
         //create table of 6 players
         Table table = new Table();
-        Dealer dealer = new Dealer();
         boolean donePlaying = false;
 
         //loop while playing
@@ -23,6 +22,7 @@ public class Main {
             if(!scr.next().equalsIgnoreCase("y")){
                 donePlaying = true;
             } else {
+                Dealer dealer = new Dealer();
                 dealer.preFlop(table);
                 table.printSelf();
                 dealer.flop();
