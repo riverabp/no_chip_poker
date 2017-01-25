@@ -15,6 +15,9 @@ public class Player {
     private Card[] myHand;
     private String myName;
 
+    /**
+     * default ctor
+     */
     public Player(){
         myStack = DEFAULT_STACK;
         Random random = new Random();
@@ -22,11 +25,19 @@ public class Player {
         myHand = new Card[DEFAULT_HOLE_CARDS];
     }
 
+    /**
+     * Change hole cards
+     * @param c1
+     * @param c2
+     */
     public void setHand(Card c1, Card c2){
         myHand[0] = c1;
         myHand[1] = c2;
     }
 
+    /**
+     * print players stack, cards, and name
+     */
     public void printSelf(){
         System.out.println("name: " + myName);
         System.out.println("stack: " + myStack);
