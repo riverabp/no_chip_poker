@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static final double SMALL_BLIND = 1.0;
@@ -8,18 +10,28 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("start.");
         System.out.println();
+        Scanner scr = new Scanner(System.in);
 
         //create table of 6 players
-        Table table = new Table(3);
+        Table table = new Table();
         Dealer dealer = new Dealer();
         boolean donePlaying = false;
+
         //loop while playing
         while(!donePlaying){
-            dealer.preFlop(table);
-            table.printSelf();
-            dealer.flop();
-            dealer.printBoard();
-            donePlaying = true;
+            System.out.println("Would you like to play a hand? Y / N");
+            if(!scr.next().equalsIgnoreCase("y")){
+                donePlaying = true;
+            } else {
+                dealer.preFlop(table);
+                table.printSelf();
+                dealer.flop();
+                dealer.printBoard();
+                dealer.turn();
+                dealer.printBoard();
+                dealer.river();
+                dealer.printBoard();
+            }
         }
             //move dealer
             //deal cards

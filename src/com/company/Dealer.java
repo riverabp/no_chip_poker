@@ -81,6 +81,7 @@ public class Dealer {
             board[i].print();
             System.out.print(" ");
         }
+        System.out.print("\n\n");
     }
 
 }
