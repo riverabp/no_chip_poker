@@ -9,6 +9,8 @@ public class Dealer {
     public static final double PLAYERS = 2;
     public static final int BOARD_SIZE = 5;
     private static final int BURNED_CARDS = 3;
+    public final double DEFAULT_STACK = 200;
+    public final int DEFAULT_HOLE_CARDS = 2;
 
     private Card[] board;
     private Card[] burnedCards;
@@ -93,7 +95,10 @@ public class Dealer {
 
         for (int i = 0; i < table.getPlayerCount(); i++){
             p = table.getPlayer(i);
-
+            Card[] availableCards = new Card[DEFAULT_HOLE_CARDS + boardSize];
+            for(int j = 0; i < DEFAULT_HOLE_CARDS; i++){
+                availableCards[j] = p.getCard(j);
+            }
         }
         return p;
     }

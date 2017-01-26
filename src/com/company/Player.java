@@ -37,6 +37,13 @@ public class Player {
     }
 
     /**
+     * @return hole card
+     */
+    public Card getCard(int index){
+        return myHand[index];
+    }
+
+    /**
      * print players stack, cards, and name
      */
     public void printSelf(){
