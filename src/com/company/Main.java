@@ -26,13 +26,14 @@ public class Main {
             } else {
                 Dealer dealer = new Dealer();
                 dealer.preFlop(table);
-                table.printSelf();
                 dealer.flop();
                 dealer.printBoard();
                 dealer.turn();
                 dealer.printBoard();
                 dealer.river();
                 dealer.printBoard();
+                dealer.assignHandRanks(table);
+                table.printSelf();
             }
         }
             //move dealer

@@ -5,11 +5,23 @@ import java.util.Random;
 /**
  * Created by Ben on 12/27/16.
  */
-public class Card {
+public class Card implements Comparable<Card>{
 
     private char suit;
     private int rank;
     Random random = new Random();
+
+    public enum HankRank{
+        HIGH_CARD,
+        PAIR,
+        TWO_PAIR,
+        THREE_OF_A_KIND,
+        STRAIGHT,
+        FLUSH,
+        FULL_HOUSE,
+        FOUR_OF_A_KIND,
+        STRAIGHT_FLUSH
+    };
 
     /**
      * Creates a new card with a suite and rank
@@ -28,6 +40,15 @@ public class Card {
             case 4: suit = 'h';
                 break;
         }
+    }
+
+    /**
+     * Implement the comparable interface to sort cards by rank
+     * @param c
+     * @return
+     */
+    public int compareTo(Card c){
+        return (rank - c.getRank());
     }
 
     /**
@@ -53,7 +74,7 @@ public class Card {
     }
 
     /**
-     * @param new rank
+     * @param rank rank
      */
     public void setRank(int rank) {
         this.rank = rank;
@@ -78,7 +99,7 @@ public class Card {
         } else {
             System.out.print(this.rank);
         }
-        System.out.print(suit);
+        System.out.print(suit + " ");
     }
 
 }
