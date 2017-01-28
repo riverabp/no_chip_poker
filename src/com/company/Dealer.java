@@ -11,7 +11,7 @@ public class Dealer {
 
     public static final double PLAYERS = 2;
     public static final int BOARD_SIZE = 5;
-    private static final int BURNED_CARDS = 3;
+    public static final int BURNED_CARDS = 3;
     public final double DEFAULT_STACK = 200;
     public final int DEFAULT_HOLE_CARDS = 2;
     public final int DEFAULT_HAND_CARDS = 5;
@@ -100,7 +100,8 @@ public class Dealer {
 
             //sort all 7 cards
             Arrays.sort(availableCards, Collections.reverseOrder());
-            //setHand(p, availableCards, Card.HankRank.HIGH_CARD);
+            //move pairs to the front
+
 
             //Check straight flush
             if(hasStraightFlush(availableCards)){
@@ -171,6 +172,31 @@ public class Dealer {
         p.setHand(hand);
         p.setHandRank(h);
     }
+
+    /**
+     * Move Quads, trips, then pairs to the front of a list of n-cards
+     */
+    private Card[] moveCardGroupsToFront(Card[] c){
+        for (int i = 0; i < c.length; i++){
+            boolean hasPair = false;
+            boolean hasTrips = false;
+            boolean hasQuads = false;
+            boolean end = false;
+            if(i + 1 < c.length){
+                end = true;
+            }
+            //check quads
+            while (c[i].getRank() == c[i+1].getRank() && !end){
+                if (i+2 == c.length){
+                    end = true;
+                } else {
+
+                }
+            }
+        }
+        return c;
+    }
+
 
     /**
      * Determine if a set of n cards is a flush
