@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 
 /**
  * A Dealer has a deck of cards and draws cards to place on the board. A dealer is also responsible for
@@ -9,20 +10,15 @@ import java.util.Collections;
  */
 public class Dealer {
 
-    public static final double PLAYERS = 2;
     public static final int BOARD_SIZE = 5;
     public static final int BURNED_CARDS = 3;
-    public final double DEFAULT_STACK = 200;
-    public final int DEFAULT_HOLE_CARDS = 2;
-    public final int DEFAULT_HAND_CARDS = 5;
-
+    public static final int DEFAULT_HOLE_CARDS = 2;
+    public static final int DEFAULT_HAND_CARDS = 5;
 
     private Card[] board;
     private Card[] burnedCards;
     private int boardSize;
     private Deck deck;
-
-
 
     /**
      * Default ctor.
@@ -100,6 +96,7 @@ public class Dealer {
 
             //sort all 7 cards
             Arrays.sort(availableCards, Collections.reverseOrder());
+            availableCards = moveCardGroupsToFront(availableCards);
             //move pairs to the front
 
 
@@ -177,24 +174,29 @@ public class Dealer {
      * Move Quads, trips, then pairs to the front of a list of n-cards
      */
     private Card[] moveCardGroupsToFront(Card[] c){
-        for (int i = 0; i < c.length; i++){
-            boolean hasPair = false;
-            boolean hasTrips = false;
-            boolean hasQuads = false;
-            boolean end = false;
-            if(i + 1 < c.length){
-                end = true;
-            }
-            //check quads
-            while (c[i].getRank() == c[i+1].getRank() && !end){
-                if (i+2 == c.length){
-                    end = true;
-                } else {
+        LinkedList<Card> cList = new LinkedList<>(Arrays.asList(c));
+        Collections.reverse(cList);
 
+        for (int i = 0; i < cList.size();i++){
+            int sameRankCards = 1;
+
+            for(int j = i + 1; j < cList.size(); j++){
+                if(cList.get(i).getRank() == cList.get(j).getRank()){
+                    sameRankCards++;
+                } else {
+                    break;
                 }
             }
+            if(sameRankCards > 1) {
+                for (int j = i; j < sameRankCards + i; j++) {
+                    cList.addFirst(cList.get(j));
+                    cList.remove(j + 1);
+                }
+            }
+            i += sameRankCards - 1;
         }
-        return c;
+        Card[] cReturn = new Card[c.length];
+        return cList.toArray(cReturn);
     }
 
 

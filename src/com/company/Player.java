@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.xml.ws.handler.HandlerResolver;
 import java.util.Random;
 
 /**
@@ -9,8 +8,8 @@ import java.util.Random;
 public class Player {
 
     public final double DEFAULT_STACK = 200;
-    public final int DEFAULT_HOLE_CARDS = 2;
-    public final int DEFAULT_HAND_CARDS = 5;
+    public final int HOLE_CARDS = 2;
+    public final int HAND_CARDS = 5;
 
 
     private double myStack;
@@ -26,8 +25,8 @@ public class Player {
         myStack = DEFAULT_STACK;
         Random random = new Random();
         myName = Integer.toString(random.nextInt(100000));
-        myHoleCards = new Card[DEFAULT_HOLE_CARDS];
-        myHand = new Card[DEFAULT_HAND_CARDS];
+        myHoleCards = new Card[HOLE_CARDS];
+        myHand = new Card[HAND_CARDS];
     }
 
     /**

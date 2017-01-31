@@ -33,7 +33,7 @@ public class Deck {
             ListIterator<Card> itr = drawnCards.listIterator(0);
             c = new Card();
 
-            //if end of the list, the card is valid
+            //if end of the list, the card is validq    1
             if(numberOfDrawnCards == 0){
                 numberOfDrawnCards++;
                 drawnCards.add(c);
