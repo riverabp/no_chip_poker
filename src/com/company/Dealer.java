@@ -171,7 +171,11 @@ public class Dealer {
     }
 
     /**
-     * Move Quads, trips, then pairs to the front of a list of n-cards
+     * Move Quads, trips, then pairs to the front of a list of n-cards.
+     * Returns an array of n cards with groups of same-ranked cards placed to the left.
+     * If there are multiple groups of cards (e.g. a full house), groups will be sorted in
+     * descending order based on the size of the group. If there are two groups of the same
+     * size (e.g. two pair), the group of higher ranked cards will be placed first.
      */
     private Card[] moveCardGroupsToFront(Card[] c){
         LinkedList<Card> cList = new LinkedList<>(Arrays.asList(c));
