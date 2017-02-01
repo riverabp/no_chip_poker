@@ -168,6 +168,7 @@ public class Dealer {
         }
         p.setHand(hand);
         p.setHandRank(h);
+
     }
 
     /**
