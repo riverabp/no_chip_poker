@@ -176,6 +176,11 @@ public class Dealer {
     private Card[] moveCardGroupsToFront(Card[] c){
         LinkedList<Card> cList = new LinkedList<>(Arrays.asList(c));
         Collections.reverse(cList);
+        int quadsRank = 0;
+        int tripsRank = 0;
+        int pairRank = 0;
+        boolean hasTrips = false;
+        boolean hasPair = false;
 
         for (int i = 0; i < cList.size();i++){
             int sameRankCards = 1;
@@ -185,6 +190,13 @@ public class Dealer {
                     sameRankCards++;
                 } else {
                     break;
+                }
+                if(sameRankCards == 4){
+                    quadsRank = cList.get(i).getRank();
+                } else if (sameRankCards == 3){
+                    tripsRank = cList.get(i).getRank();
+                } else if (sameRankCards == 2){
+                    pairRank = cList.get(i).getRank();
                 }
             }
             if(sameRankCards > 1) {
@@ -198,6 +210,7 @@ public class Dealer {
         Card[] cReturn = new Card[c.length];
         return cList.toArray(cReturn);
     }
+
 
 
     /**
