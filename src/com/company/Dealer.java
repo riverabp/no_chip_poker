@@ -214,6 +214,7 @@ public class Dealer {
         }
         Card[] cReturn = new Card[c.length];
         return cList.toArray(cReturn);
+
     }
 
 
