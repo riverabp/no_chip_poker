@@ -10,6 +10,7 @@ import java.util.LinkedList;
  */
 public class Dealer {
 
+
     public static final int BOARD_SIZE = 5;
     public static final int BURNED_CARDS = 3;
     public static final int DEFAULT_HOLE_CARDS = 2;
