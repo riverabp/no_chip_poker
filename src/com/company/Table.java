@@ -43,6 +43,19 @@ public class Table {
     }
 
     /**
+     * Construct a table with a specific number of players
+     * @param
+     */
+    //ctor with number of people
+    public Table(LinkedList<Player> p){
+        this.playerCount = p.size();
+        buttonPosition = DEFAULT_BUTTON_POSITION;
+        orbits = 0;
+        players = p;
+        dealer = new Dealer();
+    }
+
+    /**
      * Add a player to the table
      */
     public void addPlayer(){

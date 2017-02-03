@@ -43,6 +43,14 @@ public class Card implements Comparable<Card>{
     }
 
     /**
+     * Creates a new card with a specific suite and rank
+     */
+    Card(int i, char c){
+        rank = i;
+        suit = c;
+    }
+
+    /**
      * Implement the comparable interface to sort cards by rank
      * @param c
      * @return

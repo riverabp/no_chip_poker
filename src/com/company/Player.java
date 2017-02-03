@@ -30,6 +30,18 @@ public class Player {
     }
 
     /**
+     * default ctor
+     */
+    public Player(Card c1, Card c2){
+        myStack = DEFAULT_STACK;
+        Random random = new Random();
+        myName = Integer.toString(random.nextInt(100000));
+        myHoleCards = new Card[HOLE_CARDS];
+        setHoleCards(c1,c2);
+        myHand = new Card[HAND_CARDS];
+    }
+
+    /**
      * Change hole cards
      * @param c1
      * @param c2

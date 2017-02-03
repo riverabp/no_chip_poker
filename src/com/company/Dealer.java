@@ -79,6 +79,15 @@ public class Dealer {
     }
 
     /**
+     * Set board cards for testing purposes
+     * @param c
+     */
+    public void setBoard(Card[] c){
+        board = c;
+        boardSize = c.length;
+    }
+
+    /**
      * Assigns a hand rank to every player
      * @param table
      * @return
