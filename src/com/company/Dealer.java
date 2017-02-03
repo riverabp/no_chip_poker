@@ -203,6 +203,7 @@ public class Dealer {
                 } else if (sameRankCards == 2){
                     pairRank = cList.get(i).getRank();
                 }
+
             }
             if(sameRankCards > 1) {
                 for (int j = i; j < sameRankCards + i; j++) {
