@@ -21,7 +21,6 @@ public class Dealer {
     private int boardSize;
     private Deck deck;
 
-
     /**
      * Default ctor.
      */
